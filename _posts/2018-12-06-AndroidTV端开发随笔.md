@@ -73,7 +73,7 @@ adb uninstall 应用的packagename
 
 #### 常见效果实现
 * [选中放大](https://lx8421bcd.github.io/2018/12/07/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%89%E4%B8%AD%E6%94%BE%E5%A4%A7%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/)
-* 焦点item垂直居中
+* [焦点item垂直居中](https://lx8421bcd.github.io/2018/12/08/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8B%E7%84%A6%E7%82%B9%E6%8E%A7%E4%BB%B6%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/)
 * RecyclerView在TV端的使用
 
 #### 焦点问题
