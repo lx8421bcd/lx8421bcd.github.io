@@ -15,7 +15,6 @@ tags:
 尽管如此我还是没怎么加班并按时完成了开发工作，我自己也是第一次开发AndroidTV客户端，这样的速度主要得益于手机端已有的代码积累，手机端的代码库部分移植替换了原来外包的工具类库，为后续开发提供了极大便利。  
 接近一个月的TV端开发和测试反馈走下来，也算是TV端开发经验从零到一的积累了，此处记录一些TV端开发大概的经验，顺便分享，愿后来者少走弯路。  
 
-
 ### Android TV端的特点
 
 #### 1. 系统老
@@ -78,7 +77,8 @@ adb uninstall 应用的packagename
 
 #### 焦点问题
 * Android焦点派发逻辑
-* RecyclerView在TV端的焦点问题
+* [RecyclerView在TV端的焦点问题](https://lx8421bcd.github.io/2018/12/09/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8BRecyclerView/#%E5%88%B7%E6%96%B0%E6%95%B0%E6%8D%AE%E7%84%A6%E7%82%B9%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98)
+
 #### 库
 * android-support-v17
 * github 其他库

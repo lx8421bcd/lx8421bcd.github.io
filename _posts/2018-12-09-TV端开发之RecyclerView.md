@@ -26,7 +26,7 @@ RecyclerView自2014年Google推出以来，就因为其低耦合、灵活、高�
 
 
 ### 滚动居中效果
-此处实现请参考文章 [TV端开发之焦点控件垂直居中](https://lx8421bcd.github.io/2018/12/08/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8B%E7%84%A6%E7%82%B9%E6%8E%A7%E4%BB%B6%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/)
+此处实现请参考文章 [TV端开发之焦点控件垂直居中](https://lx8421bcd.github.io/2018/12/08/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8B%E7%84%A6%E7%82%B9%E6%8E%A7%E4%BB%B6%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/#recyclerview%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95)
 
 ### 刷新数据焦点丢失问题
 由于TV端焦点控制的存在，因此在使用RecyclerView时要尽可能避免直接```notifyDataSetChanged()```进行全局刷新（ps:RecyclerView本身就不推荐这种方法刷新），尽可能的去使用RecyclerView的局部刷新方法，避免分页加载数据时造成焦点丢失、滚动错乱等问题。
