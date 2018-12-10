@@ -72,7 +72,7 @@ adb uninstall 应用的packagename
 对于TV端的屏幕比例适配，使用百分比布局可以解决一定问题，但是不宜全面使用。相信关注技术的同学都应该有了解过[今日头条团队提出的适配方案](https://mp.weixin.qq.com/s/d9QCoBP6kV9VSWvVldVVwA)，在需要保持比例的情况下，这种方案是一个比较优秀的选择。
 
 #### 常见效果实现
-* 选中放大
+* [选中放大](https://lx8421bcd.github.io/2018/12/07/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%89%E4%B8%AD%E6%94%BE%E5%A4%A7%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/)
 * 焦点item垂直居中
 * RecyclerView在TV端的使用
 
