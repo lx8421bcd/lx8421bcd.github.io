@@ -18,7 +18,7 @@ RecyclerView自2014年Google推出以来，就因为其低耦合、灵活、高�
 ### 使用注意
 在TV端使用RecyclerView与手机端并没有多大不同，不过有一些问题需要注意。  
 
-在pre5.0系统上，ViewGroup、TextView、ImageView等等这些“看起来不应该有交互”的控件，默认是拿不到焦点的，给它设置```OnFocusChangeListener```并不会改变什么，__必须设置setFocusable(true)或者在xml配置中添加 ```android:focusable="true"```，这些控件才会正确的被系统派发焦点__。这一点需要特别注意。
+在pre5.0系统上，ViewGroup、TextView、ImageView等等这些“看起来不应该有交互”的控件，默认是拿不到焦点的，给它设置```OnFocusChangeListener```并不会改变什么，__必须```setFocusable(true);```或者在xml配置中添加 ```android:focusable="true"```，这些控件才会正确的被系统派发焦点__。这一点需要特别注意。
 
 
 ### 放大遮盖问题处理
