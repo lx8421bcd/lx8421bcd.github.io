@@ -1,18 +1,18 @@
 # Site settings
 title: LxStorage
 SEOTitle: LxStorage
-header-img: img/home_bg_default.jpg
-email: unknown@unknown.com
+header-img: img/home_bg_o.jpg
+email: 
 description: "记我想记，随心所欲"
-keyword: "8421bcd, 0x8421bcd, lx8421bcd, LxStorage, Android"
+keyword: "8421bcd, lx8421bcd, LxStorage, Android, blog"
 url: "https://lx8421bcd.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/lx8421bcd/lx8421bcd.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "一只辣鸡"
-sidebar-avatar: /img/avatar_g.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "一只辣鸡，目前主要从事Android开发，偶尔干点杂活"
+sidebar-avatar: /img/avatar_anubis.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
