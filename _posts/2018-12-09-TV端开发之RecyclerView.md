@@ -12,7 +12,7 @@ tags:
 ---
 
 ### 前言
-RecyclerView自2014年Google推出以来，就因为其低耦合、灵活、高可扩展性而广受欢迎，在我自己开发过的项目中基本已经完全摒弃ListVie和GridView等控件，全面使用RecyclerView，开发AndroidTV端同样不例外，使用RecyclerView带来的便利性毋庸置疑，但Google在开发控件时似乎并没有考虑到TV端，直接在TV端使用RecyclerView，会有一些小问题需要处理。
+RecyclerView自2014年Google推出以来，就因为其低耦合、灵活、高可扩展性而广受欢迎，在我自己开发过的项目中基本已经完全摒弃ListView和GridView等控件，全面使用RecyclerView，开发AndroidTV端同样不例外，使用RecyclerView带来的便利性毋庸置疑，但Google在开发控件时似乎并没有考虑到TV端，直接在TV端使用RecyclerView，会有一些小问题需要处理。
 
 
 ### 使用注意
