@@ -1,4 +1,4 @@
-##简介
+## 简介
 个人博客，内容在本地markdown编辑提交至此，主要用于记录和备份。  
 
 
@@ -6,8 +6,11 @@
 ## 致谢
 感谢开源库作者和平台为低成本快速搭建博客提供的便利  
 模板fork自[BY Blog](https://github.com/qiubaiying/qiubaiying.github.io), 感谢作者    
-[Jekyll](https://jekyllrb.com/)
+
+[Jekyll](https://jekyllrb.com/)  
+
 [Github Pages](https://pages.github.com/)  
+
 [Bootstrap](https://getbootstrap.com/)
 
 
