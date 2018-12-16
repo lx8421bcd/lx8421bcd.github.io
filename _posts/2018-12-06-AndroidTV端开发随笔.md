@@ -46,7 +46,6 @@ __功能简单，输入较少，音视频为主，性能优化要求较高__
 
 
 ### 一点开发经验分享
-
 #### 开发和调试
 * 尽量使用真机调试，正如上面所言，不拿台电视试试，就不会知道真正的TV端性能有多低，同样的SDK和业务实现在手机上和在电视上的差异有时可能大的可怕……
 * 如果有选择测试机的权力，一定要去找能够打开ADB调试的机子，目前我测试下来的机型中，小米打开测试模式最方便，乐视的最烂，只能看log。adb无线调试的常用命令：
@@ -80,8 +79,7 @@ adb uninstall 应用的packagename
 * [RecyclerView在TV端的焦点问题](https://lx8421bcd.github.io/2018/12/09/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8BRecyclerView/#%E5%88%B7%E6%96%B0%E6%95%B0%E6%8D%AE%E7%84%A6%E7%82%B9%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98)
 
 #### 库
-* android-support-v17
-* github 其他库
+* [android-support-v17-leanback](https://lx8421bcd.github.io/2018/12/16/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8Bsupport-v17%E5%BA%93/)
 
 
 To be continue......
