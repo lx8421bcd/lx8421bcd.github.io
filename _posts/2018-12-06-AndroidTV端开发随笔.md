@@ -75,11 +75,8 @@ adb uninstall 应用的packagename
 * [RecyclerView在TV端的使用](https://lx8421bcd.github.io/2018/12/09/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8BRecyclerView/)
 
 #### 焦点问题
-* Android焦点派发逻辑
+* [Android焦点查找逻辑分析、焦点拦截、TV端常见焦点问题处理](https://lx8421bcd.github.io/2018/12/10/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8B%E7%84%A6%E7%82%B9%E5%A4%84%E7%90%86/)
 * [RecyclerView在TV端的焦点问题](https://lx8421bcd.github.io/2018/12/09/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8BRecyclerView/#%E5%88%B7%E6%96%B0%E6%95%B0%E6%8D%AE%E7%84%A6%E7%82%B9%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98)
 
 #### 库
 * [android-support-v17-leanback](https://lx8421bcd.github.io/2018/12/16/TV%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8Bsupport-v17%E5%BA%93/)
-
-
-To be continue......
