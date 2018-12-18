@@ -68,4 +68,4 @@ public class AppNetworkManager {
     }
 }
 ```
-这里需要注意的是OkHttp的Interceptor有两种，ApplicationInterceptor(应用拦截器)和NetoworkInterceptor(网络拦截器)，这里我们使用的是应用拦截器（appInterceptor()，添加网络拦截器使用addNetworkInterceptor()）。一般来说应用拦截器足以满足我们小幅度编辑Headers的需求，应用拦截器管的事比较少，所以比较方便，但是如果需要深度掌控Http请求过程，就要考虑使用网络拦截器了。
+这里需要注意的是OkHttp的Interceptor有两种，ApplicationInterceptor(应用拦截器)和NetoworkInterceptor(网络拦截器)，这里我们使用的是应用拦截器（```addInterceptor()```，添加网络拦截器使用```addNetworkInterceptor()```）。一般来说应用拦截器足以满足我们小幅度编辑Headers的需求，应用拦截器管的事比较少，所以比较方便，但是如果需要深度掌控Http请求过程，就要考虑使用网络拦截器了。
