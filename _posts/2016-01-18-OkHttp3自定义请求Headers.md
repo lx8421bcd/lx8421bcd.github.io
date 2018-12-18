@@ -11,10 +11,13 @@ tags:
     - Android开发随笔
 ---
 
-[原文](https://blog.csdn.net/u011734444/article/details/50536411)由本人于2016年创作于CSDN，后续修改完善提交于此。  
+[原文](https://blog.csdn.net/u011734444/article/details/50536411)由本人于2016年创作于CSDN，后续修改完善提交于此。 
+
+
 近几天尝试使用Retrofit和OkHttp构建网络层，从官网配置了依赖链接后，惊奇的发现OkHttp3，Retrofit2，都与以前的版本不兼容，不仅包名不一样（OkHttp3.＊，以前的版本是com.squareup.okhttp.*）而且很多方法也被删掉了，目前只有Retrofit2在网上有少许资料，OkHttp3只能参考官方文档了。  
 
 在构建网络层时会遇到一个问题就是要手动配置Http请求的Headers，写入缓存Cookie，自定义的User-Agent等参数，但是对于有几十个接口的网络层，我才不想用注解配置Headers，目前网上很多文章的方法真对这两个版本都不是很适用，有的给出的方法已经被删除，有的方法会报出异常 :(  
+
 查阅OkHttp3的使用说明可知，可以使用Interceptor对Http请求进行拦截并编辑请求内容，不过OkHttp2和OkHttp3的使用方法不太一样。在网上查阅文章经常看到的```okHttpClient.interceptors().add(...)```方法在OkHttp3中已不适用，OkHttp3的```interceptors()```方法返回的是一个不可编辑的列表，尝试对其进行编辑会抛出```UnSupportedOperationException```，所以我们必须把添加interceptor这步放到初始化OkHttpClient来做。
 
 这里直接贴出实现方法
