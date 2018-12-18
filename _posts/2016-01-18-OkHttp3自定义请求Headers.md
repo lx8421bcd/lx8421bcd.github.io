@@ -5,7 +5,7 @@ subtitle:
 date:       2016-01-18
 author:     lx8421bcd
 header-img: img/post-bg-android.jpg
-catalog: true
+catalog: false
 tags:
     - Android
     - Android开发随笔
