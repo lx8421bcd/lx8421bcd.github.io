@@ -25,6 +25,7 @@ tags:
 要实现这个需求需要2点：
 1. 解析自定义注解
 2. 在解析自定义注解的期间能够编辑请求的Headers
+
 这就需要阅读Retrofit的源码了 [retrofit github](https://github.com/square/retrofit/)  
 
 通过阅读Retrofit的源码可以知道Retrofit将声明的method转化成具体的Call主要是在ServiceMethod中进行的，如果不想动Retrofit的源码，而是用其对外提供的接口实现Annotation解析的功能，那就只有在ConverterFactory和CallAdapterFactory中动手脚了。
