@@ -120,7 +120,7 @@ StrictMode.setVmPolicy(builder.build());
 
 
 ### Notification Channel    
-Android 8.0以后增加了推送渠道（Notification Channel）的概念，用于更精细的划分一个应用的不同推送，比如一个类似知乎这样的以阅读为主的综合类应用，就可以将推送分为推广、私信等channel；用户不想看推广推送，又怕错过私信，就可以将推广关闭，保留私信的channel。
+Android 8.0以后增加了推送渠道（Notification Channel）的概念，用于更精细的划分一个应用的不同推送，比如一个类似知乎这样的以阅读为主的综合类应用，就可以将推送分为推广、私信等channel；用户不想看推广推送，又怕错过私信，就可以将推广关闭，保留私信的channel。  
 我们知道Android Notification有3个必填属性：icon、title、content，这三个如果缺了任何一个都将会导致Notification不显示，而对于targetSdkVersion=26+的应用，又增加了一个NotificationChannelId，如果构建Notification的时候不设置NotificationChannelId，后果会比不设置前三个还严重，将会在显示notification时崩溃。所以适配26+我们必须对应用的NotificationChannel进行管理。
 
 Notification Channel由开发者创建，构建时的配置与普通Notification相似，可以设定重要等级、是否震动、是否响铃等，
@@ -143,7 +143,7 @@ public static NotificationCompat.Builder buildNotification(String channelId, Str
         return new NotificationCompat.Builder(mContext);
     }
 ```
-但需要注意的是NotificationChannel一旦创建，则不再能够被应用修改，只有用户可以修改。所以在调试NotificationChannel时，记得卸载重装。
+__需要注意的是NotificationChannel一旦创建，则不再能够被应用修改，只有用户可以修改__。所以在调试NotificationChannel时，记得卸载重装。
 
 
 ### 后台Service
