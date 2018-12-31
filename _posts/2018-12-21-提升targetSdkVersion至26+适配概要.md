@@ -149,7 +149,8 @@ __需要注意的是NotificationChannel一旦创建，则不再能够被应用�
 ### 后台Service
 Android 8.0对应用启动后台服务进行了严格的限制，对于targetSdkVersion=26+的应用，系统不允许后台应用创建后台服务，必须以通知栏可见的形式告诉用户你正在后台执行任务。也就是使用```ContextCompat.startForegroundService()```创建前台服务，然后必须在5秒内调用此服务的startForeground()方法，否则系统将立即停止服务，抛出```RemoteServiceException```异常  
 
-    android.app.RemoteServiceException: Context.startForegroundService() did not then call Service.startForeground()
+    android.app.RemoteServiceException: 
+    Context.startForegroundService() did not then call Service.startForeground()
     ......
 
 在Android 9.0之后，应用想要启动前台服务，必须要拥有```android.permission.FOREGROUND_SERVICE```权限，否则会抛出异常，这个权限等级并不高，在Manifest中声明即可；如果你的targetSdkVersion=28+，又需要使用前台进程，请记得声明此权限。
@@ -157,8 +158,7 @@ Android 8.0对应用启动后台服务进行了严格的限制，对于targetSdk
 
 
 ### 非SDK接口访问限制
-在Android P中Google正式对使用反射调用Android SDK内部不对外开放的接口来达成一些目的的行为作出限制。 (对非 SDK 接口的限制 
- | android developer)[https://developer.android.com/about/versions/pie/restrictions-non-sdk-interfaces?hl=zh-cn]  
+在Android P中Google正式对使用反射调用Android SDK内部不对外开放的接口来达成一些目的的行为作出限制。[对非 SDK 接口的限制 | android developer](https://developer.android.com/about/versions/pie/restrictions-non-sdk-interfaces?hl=zh-cn)  
 这意味着以前很多通过反射实现的小花样即将告一段落，一般我们的开发中很少有这样的需求，但老项目中或多或少会有历史遗留代码，因此也需要注意。  
 在适配这一块时，需要注意到Google所列出的几个“SDK名单”  
 
