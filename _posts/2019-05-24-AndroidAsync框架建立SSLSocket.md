@@ -18,7 +18,7 @@ tags:
 ### 认证配置
 这一步主要是配置KeyStore、TraustManager、KeyManager等工具用以初始化SSLContext。  
 直接用代码讲解会比较清楚，
-```Java
+```java
 // 配置KeyStore对象，加载包含证书的KeyStore
 InputStream is = context.getResources().openRawResource(R.raw.crt_pub);
 KeyStore keyStore = KeyStore.getInstance("BKS");
@@ -48,7 +48,7 @@ __双向认证__ 则需初始化KeyManager，在SSLContext的init方法中国呢
 
 ### SSL socket建立
 在无需建立SSL时，AndroidAsync框架建立一条socket链接是这样写的
-```Java
+```java
 AsyncServer.getDefault().connectSocket(host, port, new ConnectCallback() {
 
     @Override
@@ -63,7 +63,7 @@ AsyncServer.getDefault().connectSocket(host, port, new ConnectCallback() {
 });
 ```
 建立SSL socket也比较简单，就是在上述代码上利用```AsyncSSLSocketWrapper```添加一个证书交换的握手过程
-```Java
+```java
 AsyncServer.getDefault().connectSocket(host, port, new ConnectCallback() {
 
     @Override
@@ -141,7 +141,7 @@ Android 异常过程
 
 [AndroidAsyncSocketExamples - ClientSSL.java](https://github.com/reneweb/AndroidAsyncSocketExamples/blob/master/app/src/main/java/com/github/reneweb/androidasyncsocketexamples/tcp/ClientSSL.java)
 
-```Java
+```java
 socket.setWriteableCallback(new WritableCallback() {
     @Override
     public void onWriteable() {
