@@ -162,3 +162,10 @@ socket.setWriteableCallback(new WritableCallback() {
 ……
 
 这什么回调套路啊，坑爹啊……
+
+### 总结一下
+虽然绕了一大圈，最后解决方法很简单，甚至于网上找代码一个一个撞搞不好都能撞大运撞出来，但我觉得这次调试的过程还是很有价值的，起码对这块的认识加深了不少。  
+参考资料：  
+[AndroidAsync](https://github.com/koush/AndroidAsync)  
+[AndroidAsyncSocketExamples](https://github.com/reneweb/AndroidAsyncSocketExamples)  
+[Java使用SSLEngine握手过程Demo](https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/samples/sslengine/SSLEngineSimpleDemo.java)  
