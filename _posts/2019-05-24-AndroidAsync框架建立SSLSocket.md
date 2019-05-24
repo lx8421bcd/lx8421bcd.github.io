@@ -130,10 +130,10 @@ private void handleSSLhandshake(String host, AsyncSocket socket, AsyncSSLSocketW
 WireShark抓包了一个连接正常的iPhone，和连接异常的Android，看看handshake过程有什么区别
 
 iOS 正常过程  
-![iOS 正常](../img/android_async_debug/ios_handshake_succeed.png)  
+![iOS 正常](https://raw.githubusercontent.com/lx8421bcd/lx8421bcd.github.io/master/img/android_async_debug/ios_handshake_succeed.png)  
 
 Android 异常过程
-![Android 异常](../img/android_async_debug/android_handshake_failed.png)  
+![Android 异常](https://raw.githubusercontent.com/lx8421bcd/lx8421bcd.github.io/master/img/android_async_debug/android_handshake_failed.png)  
 
 我怀疑问题就出在这个Encrypted Alert上面，在服务端回复这个之后，socket就断掉了，而这个Encrypted Alert上面，紧接着的是一条客户端发送的Application Data包，得找出这个包是谁发的才行。  
 然而追踪AndroidAsync源码下来，服务端居然是回复了handshake finish的，也就是说SSL验证过程是没问题的……
