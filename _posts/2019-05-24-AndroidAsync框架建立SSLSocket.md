@@ -43,7 +43,7 @@ sslContext.init(null, trustManagers, null);
 ```
 __KeyStore__ 对象有手动加载crt证书和直接加载KeyStore两种方式来生成，Android仅支持BKS格式的KeyStore，如果使用KeyStore来存储证书的话，记得转换一下格式。  
 __单向认证__ 通常是客户端来校验服务端下发证书的合法性，在Java/Android中，校验服务端下发证书合法性这一块逻辑主要由```TrustManager```负责，因此这个东西是必须初始化的。  
-__双向认证__ 则需初始化KeyManager，在SSLContext的init方法中国呢传入，由于我是做单向验证，这一步就不细说了。
+__双向认证__ 则需初始化```KeyManager```，在SSLContext的init方法中传入，由于我是做单向验证，这一步就不细说了。
 
 
 ### SSL socket建立
