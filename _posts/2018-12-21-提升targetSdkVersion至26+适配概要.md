@@ -117,6 +117,7 @@ StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
 StrictMode.setVmPolicy(builder.build());
 ```
 此方法为暂缓之计，如果适配工作量极大可以先行使用，建议逐步适配过渡到FileProvider。  
+update 2019/10：在最新的Android 10 正式版中，此方法已经失效，请老老实实使用FileProvider。  
 
 
 ### Notification Channel    
