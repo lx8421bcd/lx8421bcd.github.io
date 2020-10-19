@@ -28,9 +28,11 @@ mac下可以使用shell的相关命令进行擦除，参考：[OSX使用sed移�
 
 **Replugin**  
 对于集成了Replugin的项目，gradle版本最多升到3.6.x，4.0以后Gradle内部的函数变更会导致Replugin在build期间失败。  
+
 > A problem occurred configuring project ':app'.
 >
 > groovy.lang.MissingPropertyException: No such property: scope for class: com.android.build.gradle.internal.variant.ApplicationVariantData
+
 目前无解，只能等之后看看Replugin会不会有更新适配。  
 
 **无用的layout文件**  
