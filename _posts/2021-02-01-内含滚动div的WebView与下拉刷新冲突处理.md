@@ -17,7 +17,8 @@ tags:
 
 类似于这种由固定外框+tab切换内部滚动div的结构，在丢进嵌套下拉刷新的WebView内而不作任何处理的话，无论内部div滚动到头与否，上拉必然触发下拉刷新。
 因为外框内容的高度是固定的，正好适配到WebView的高度，而WebView也没有对这种内部滚动进行监测，这就导致Android大部分下拉刷新控件使用的```View.canScrollVertically(-1)```方法永远返回false。
-这种情况下，当上拉的时候，WebView判断内容已经到头，就会让套在外边的RefreshLayout认为可以触发下拉刷新了。  
+这种情况下，当下拉的时候，WebView判断内容已经到头，就会让套在外边的RefreshLayout认为可以触发下拉刷新了。  
+
 不过需要指出的一点是，虽然我们这种简易的RefreshLayout套WebView布局在这种Web页面上会有滑动冲突，但同样的页面放到诸如Chrome之类的系统浏览器app里却没有任何问题。这说明肯定是有什么办法能够处理这个冲突的。
 
 就这个问题我在网上查了查，中文网络上的内容实在是乏善可陈，唯一一篇比较有价值的，是说跟前端那边商定一个滚动布局的id，然后native通过js注入，去查对应id的div是否滚动到顶部。
@@ -27,7 +28,8 @@ tags:
         getViewBinding().webView.evaluateJavascript("document.getElementById(\"inner_scroll_box\").scrollTop", new ValueCallback<String>() {
             @Override
             public void onReceiveValue(String value) {
-                Log.d("webview", "scrollTop: " + );
+                Log.d("webview", "scrollTop: " + value);
+                // DO SOMETHING
             }
         });
         return false;
@@ -36,7 +38,7 @@ tags:
 ```
 这个方法我没有考虑过落实，普适性太差，Web那边重构一下，或者使用的是第三方的页面，都可能导致问题。从另一点来说，没有滑动冲突的系统浏览器app，他们要适配的页面千千万，很明显不会是采用这种方法来解决问题的。
 
-继续检索，so的老哥提出了一种解决方法，检查WebView的overscroll状态。就是对RefreshLayout套WebView这种布局做特殊处理，触控事件先全交给WebView，等上滑到WebView overscroll触发了，就判定RefreshLayout可以启用了，下拉刷新可以触发了。这个OverScroll状态，在WebView的```onOverScrolled()```方法中执行
+继续检索，其实英文那边也没好到哪里去，就so上一老哥提出了一种解决方法，检查WebView的overscroll状态。就是对RefreshLayout套WebView这种布局做特殊处理，触控事件先全交给WebView，等上滑到WebView overscroll触发了，就判定RefreshLayout可以启用了，下拉刷新可以触发了。这个OverScroll状态，在WebView的```onOverScrolled()```方法中执行
 ```java
 
 public class CustomWebView extends WebView {
@@ -70,8 +72,8 @@ public class CustomWebView extends WebView {
 
 ```
 
-这个方法让内部滚动div滚动到头之后才能触发下拉刷新。但并没有完全解决整个滑动冲突的体验问题。使用中会出现滑动到头之后，继续下拉，下拉刷新无响应，下拉很多次才会触发下拉刷新。
-这个问题是由于当对下拉刷新布局开关的控制放进```onTouchEvent()```这样高频触发的方法内部后，每一次手指点击屏幕就把下拉刷新给关了。要手指继续往下划，才会触发overscroll判断，开启下拉刷新，但此时一个完整的touch动作链条（down-move-up）已经被消耗了，自然不会触发下拉刷新布局响应。只有多试几次赌脸触发。  
+这个方法的确让内部滚动div滚动到头之后才能触发下拉刷新。但并没有完全解决整个滑动冲突的体验问题。使用中会出现滑动到头之后，继续下拉，下拉刷新无响应，下拉很多次才会触发下拉刷新。这个问题是由于当对下拉刷新布局开关的控制放进```onTouchEvent()```这样高频触发的方法内部后，每一次手指点击屏幕就把下拉刷新给关了。要手指继续往下划，才会触发overscroll判断，开启下拉刷新，但此时一个完整的touch动作链条（down-move-up）已经被消耗了，自然不会触发下拉刷新布局响应。只有多试几次赌脸触发。  
+
 很明显这个体验是很垃圾的，还可以优化。既然明白原理，那么优化的点自然也很好找到：修改```onTouchEvent()```中refreshLayout开关的判断逻辑。
 ```java
 
