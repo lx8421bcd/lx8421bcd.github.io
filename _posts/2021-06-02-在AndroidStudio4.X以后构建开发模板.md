@@ -297,6 +297,7 @@ tools:context="${packageName}.${activityClass}Activity">
 """
 
 ```
+完整的项目结构和代码，个人为QuickDevFramework做的模板插件项目[QDFTemplates](https://github.com/lx8421bcd/QuickDevFramework/tree/master/qdftemplates)仅供参考
 
 ### 导出插件、安装
 在Android Studio（Intellij ieda亦可）工具栏的Run上选择“Run Plugin”，build完成后会在项目的```build/libs/```目录下生成插件Jar包。
