@@ -19,6 +19,10 @@ tags:
 
 目前网上有一些继续使用FreeMarker的方法，但鉴于本文主要讲新的模板编辑方法，这里就不赘述了。
 
+#### update
+在Android Studio经过较大的版本更新后（特别是背后的IDEA版本更新了）已经编译过的插件Jar包可能会失效，如果出现了Android Studio更新后插件失效问题，建议将新版本Android Studio中的```wizard_template.jar```重新导出来，覆盖项目中老版本的```wizard_template.jar```，如果有必要的话，可以同步一下IDEA官方插件项目中更新的内容。
+
+
 ### 创建项目
 首先从Github上把 [Intellij Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) 项目fork下来。这算是一个最简的插件项目工程模板了。  
 然后就是修改项目名称和相关配置属性：
