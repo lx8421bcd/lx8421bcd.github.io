@@ -23,32 +23,28 @@ tags:
 
 ## 配置
 
-本文主要讲解一下Android Studio下的配置过程。
-首先项目的状态应达到集成完毕flutter_gen/flutter_intl，运行 `build_runner`即可以生成映射文件的状态    
+本文主要讲解一下Android Studio下的配置过程。    
 
-在Android Studio  Settings → Plugins → MarketPlace中下载并安装 `File Watchers`
-
-配置自动运行 `build_runner`的脚本，mac下.sh，windows下就.bat，里面就放build命令，脚本文件建议存放在项目根目录下
-
+首先项目的状态应达到集成完毕flutter_gen/flutter_intl，运行 `build_runner`即可以生成映射文件的状态 。   
+在Android Studio  Settings → Plugins → MarketPlace中下载并安装 `File Watchers`。    
+配置自动运行 `build_runner`的脚本，mac下.sh，windows下就.bat，里面就放build命令，脚本文件建议存放在项目根目录下    
 ```shell
 # 如果你的脚本需要在项目的某一路径下执行，最好先跳转到当前项目的根目录
   cd $(dirname "0") || exit    
+
   dart run build_runner build
 ```
 
 对于flutter_intl，如果你是使用flutter_intl插件来做生成映射表的话，可以使用如下命令编写脚本
-
-```shell
+``shell
   cd $(dirname "0") || exit    
+
   flutter pub global run intl_utils:generate
 ```
 
-一般来说建议一个类型资源编写一个脚本，不要把build命令全部放一起，不然你改一下文案，图片映射表跟着一起重新build一遍，蛋疼不……
-
-在Settings → Tools → File Watchers下配置监听
-
-![File Watcher项目配置](https://raw.githubusercontent.com/lx8421bcd/lx8421bcd.github.io/master/img/file_watcher/file_watcher_config_example.png)  
-
+一般来说建议一个类型资源编写一个脚本，不要把build命令全部放一起，不然你改一下文案，图片映射表跟着一起重新build一遍，蛋疼不……    
+之后在Settings → Tools → File Watchers下配置监听    
+![File Watcher项目配置](https://raw.githubusercontent.com/lx8421bcd/lx8421bcd.github.io/master/img/file_watcher/file_watcher_config_example.png)      
 简单叙述一下本图中的配置项：
 * Name - 项目名字，没啥好说的
 * Files to Watch
@@ -59,10 +55,9 @@ tags:
 * Tool to Run on Changes - 这个就是选择在监测到监听目录的文件发生变化时所需执行的操作，在本项目的需求中，我们选择执行对应的脚本即可。
   以上图为例，在Program下输入脚本路径，其中`$ProjectFileDir$`即是当前项目的根目录。
 
-完成上述配置并保存，一个FileWather监听就配置好了，理论上来说已经可以在监听路径下修改文件测试了。
+完成上述配置并保存，一个FileWather监听就配置好了，理论上来说已经可以在监听路径下修改文件测试了。    
 
-脚本权限配置 - 对于Mac或Linux系统，有可能存在脚本没有权限运行的情况，需要修改一下脚本文件的权限
-
+注意，对于Mac或Linux系统，有可能存在脚本没有权限运行的情况，需要修改一下脚本文件的权限    
 ```shell
   # 这里以脚本存放在项目根目录为例
   cd $(dirname "0") || exit    
