@@ -31,14 +31,14 @@ tags:
 ```shell
 # 如果你的脚本需要在项目的某一路径下执行，最好先跳转到当前项目的根目录
 cd $(dirname "0") || exit    
-
+# 执行build 命令
 dart run build_runner build
 ```
 
 对于flutter_intl，如果你是使用flutter_intl插件来做生成映射表的话，可以使用如下命令编写脚本
 ```shell
 cd $(dirname "0") || exit    
-
+# 执行build 命令
 flutter pub global run intl_utils:generate
 ```
 一般来说建议一个类型资源编写一个脚本，不要把build命令全部放一起，不然你改一下文案，图片映射表跟着一起重新build一遍，蛋疼不……    
@@ -61,9 +61,8 @@ flutter pub global run intl_utils:generate
 ```shell
 # 这里以脚本存放在项目根目录为例
 cd $(dirname "0") || exit    
-
+# 给所有脚本文件提权
 chmod 777 l10n_build.sh
-
 chmod 777 flutter_gen_build.sh
 ```
 
