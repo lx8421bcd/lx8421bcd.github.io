@@ -36,13 +36,13 @@ tags:
 ```
 
 对于flutter_intl，如果你是使用flutter_intl插件来做生成映射表的话，可以使用如下命令编写脚本
-``shell
+```shell
   cd $(dirname "0") || exit    
 
   flutter pub global run intl_utils:generate
 ```
-
 一般来说建议一个类型资源编写一个脚本，不要把build命令全部放一起，不然你改一下文案，图片映射表跟着一起重新build一遍，蛋疼不……    
+
 之后在Settings → Tools → File Watchers下配置监听    
 ![File Watcher项目配置](https://raw.githubusercontent.com/lx8421bcd/lx8421bcd.github.io/master/img/file_watcher/file_watcher_config_example.png)      
 简单叙述一下本图中的配置项：
